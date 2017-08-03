@@ -274,6 +274,8 @@
 <script src="/reception/js/jquery.min.js"></script>
 <script src="/reception/js/bootstrap.min.js"></script>
 <script src="/reception/js/validator.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 <script src="/reception/js/Chart.min.js"></script>
     <script>
       Chart.defaults.global.legend = {
@@ -309,6 +311,9 @@
         }
       }); 
 	        
+$.validator.methods.mobile = function( value, element ) {
+  return this.optional( element ) || /[a-z]+@[a-z]+\.[a-z]+/.test( value );
+}
     </script>
 
 </body>
